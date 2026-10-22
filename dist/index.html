@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10120f">
+  <meta name="description" content="MAYDAY · 林间的个人宇宙。在设计、代码与日常之间，收集一些好奇，创造一些可能。示例个人作品集。">
+  <title>MAYDAY · 个人宇宙</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%2310120f'/%3E%3Ccircle cx='32' cy='32' r='19' fill='%23d4fa83'/%3E%3Ccircle cx='41' cy='25' r='19' fill='%2310120f'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <svg class="symbols" aria-hidden="true"><defs>
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"/></symbol>
+    <symbol id="shuffle" viewBox="0 0 24 24"><path d="m17 3 4 4-4 4M3 7h3c5 0 7 10 12 10h3M17 13l4 4-4 4M3 17h3c2 0 4-3 6-6s4-4 6-4h3"/></symbol>
+    <symbol id="sound" viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4zM17 8c2 2 2 6 0 8M20 5c4 4 4 10 0 14"/></symbol>
+    <symbol id="pause" viewBox="0 0 24 24"><path d="M9 5v14M15 5v14"/></symbol>
+    <symbol id="play" viewBox="0 0 24 24"><path d="m8 4 12 8-12 8z"/></symbol>
+    <symbol id="close" viewBox="0 0 24 24"><path d="m5 5 14 14M19 5 5 19"/></symbol>
+  </defs></svg>
+  <header class="header">
+    <button class="wordmark" data-view="home" aria-label="MAYDAY 返回宇宙">MAYDAY<span>.</span></button>
+    <nav aria-label="主导航"><button class="nav-link active" data-view="home" aria-current="page">宇宙</button><button class="nav-link" data-view="works">作品</button><button class="nav-link" data-view="about">关于</button></nav>
+    <button class="outline contact-nav" data-view="contact">一起创造 <svg><use href="#arrow"/></svg></button>
+  </header>
+
+  <main class="main" id="main">
+    <section class="intro" aria-labelledby="hero-title">
+      <div class="intro-content" id="intro-content">
+        <h1 id="hero-title">A little <em>chaos.</em><br>A lot of curiosity.</h1>
+        <p class="intro-copy" id="intro-copy">我是林间，一名在设计、代码与日常之间探索的<br class="desktop-break">独立创造者。欢迎降落我的小小宇宙。</p>
+        <div class="actions"><button class="outline primary" id="primary-action">探索我的宇宙 <svg><use href="#arrow"/></svg></button><button class="text-button" id="secondary-action">随机漫游 <svg><use href="#shuffle"/></svg></button></div>
+      </div>
+      <div class="page-count"><span id="page-index">01</span><span class="count-line"></span><span>04</span></div>
+    </section>
+
+    <section class="universe" id="universe" aria-label="交互星图">
+      <div class="scene" id="scene">
+        <svg class="starfield" viewBox="0 0 800 820" aria-hidden="true" id="starfield"></svg>
+        <div class="orbital-system" id="orbital-system">
+          <svg class="orbit-lines" viewBox="0 0 800 820" aria-hidden="true">
+            <ellipse cx="410" cy="410" rx="355" ry="160" transform="rotate(-27 410 410)"/>
+            <ellipse cx="410" cy="410" rx="340" ry="220" transform="rotate(-57 410 410)"/>
+            <ellipse cx="410" cy="410" rx="365" ry="180" transform="rotate(-76 410 410)"/>
+            <ellipse class="dashed" cx="410" cy="410" rx="300" ry="250" transform="rotate(-52 410 410)"/>
+            <ellipse class="faint" cx="410" cy="410" rx="280" ry="315" transform="rotate(25 410 410)"/>
+          </svg>
+          <button class="moon" id="moon" aria-label="点击月球，发现一条宇宙来信"><img src="assets/moon.png" alt="被侧光照亮、布满环形山的月球" fetchpriority="high" draggable="false"></button>
+          <span class="satellite sat-one" aria-hidden="true"></span><span class="satellite sat-two" aria-hidden="true"></span><span class="satellite sat-three" aria-hidden="true"></span>
+          <button class="orbit-label label-works" data-view="works"><span>01</span> 作品集<span class="leader"></span></button>
+          <button class="orbit-label label-about" data-view="about"><span>02</span> 关于我<span class="leader"></span></button>
+          <button class="orbit-label label-notes" data-view="notes"><span>03</span> 灵感碎片<span class="leader"></span></button>
+          <button class="orbit-label label-contact" data-view="contact"><span>04</span> 发射信号<span class="leader"></span></button>
+        </div>
+        <span class="vertical-label">MAYDAY<br> /<br> PERSONAL<br> UNIVERSE</span>
+        <button class="orbit-control" id="orbit-control" aria-label="暂停轨道" aria-pressed="false"><svg><use href="#pause"/></svg><span>SPACE 暂停轨道</span></button>
+      </div>
+    </section>
+    <section class="content-pane" id="content-pane" hidden aria-label="档案内容"></section>
+  </main>
+
+  <footer class="footer">
+    <span class="status"><i></i>保持好奇，持续生长</span>
+    <span class="location"><span class="planet-icon">♄</span> SHANGHAI, EARTH</span>
+    <div class="footer-controls"><button class="circle sound-toggle" id="sound-toggle" aria-label="开启环境声音" aria-pressed="false"><svg><use href="#sound"/></svg><span class="sound-slash"></span></button><div class="mode-switch"><button id="map-mode" class="selected" aria-pressed="true">星图模式</button><span>/</span><button id="list-mode" aria-pressed="false">列表模式</button></div><button class="command-trigger" id="command-trigger" aria-label="打开指令菜单">⌘ K</button><span class="demo-label">示例人物与项目 · 可替换</span></div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <dialog class="project-dialog" id="project-dialog" aria-labelledby="project-title"><button class="circle dialog-close" aria-label="关闭作品详情"><svg><use href="#close"/></svg></button><div id="project-detail"></div></dialog>
+  <dialog class="command-dialog" id="command-dialog" aria-label="宇宙指令菜单"><div class="command-head"><svg><use href="#shuffle"/></svg><input id="command-input" aria-label="搜索坐标" placeholder="你想去往哪里？"><button class="key" id="command-close">ESC</button></div><div id="command-results"></div><div class="command-foot">在宇宙中，任何方向都值得探索。<span>↵ 前往</span></div></dialog>
+  <script src="app.js" defer></script>
+</body>
+</html>
